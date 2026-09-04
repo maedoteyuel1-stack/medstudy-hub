@@ -1,0 +1,17 @@
+sitemap.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://maedoteyuel1-stack.github.io/medstudy-hub/</loc></url>
+  <url><loc>https://maedoteyuel1-stack.github.io/medstudy-hub/brain.html</loc></url>
+  <url><loc>https://maedoteyuel1-stack.github.io/medstudy-hub/business.html</loc></url>
+  <url><loc>https://maedoteyuel1-stack.github.io/medstudy-hub/ideas.html</loc></url>
+  <url><loc>https://maedoteyuel1-stack.github.io/medstudy-hub/medical.html</loc></url>
+  <url><loc>https://maedoteyuel1-stack.github.io/medstudy-hub/study.html</loc></url>
+  <url><loc>https://maedoteyuel1-stack.github.io/medstudy-hub/notes.html</loc></url>
+  <url><loc>https://maedoteyuel1-stack.github.io/medstudy-hub/subjects.html</loc></url>
+  <url><loc>https://maedoteyuel1-stack.github.io/medstudy-hub/tasks.html</loc></url>
+  <url><loc>https://maedoteyuel1-stack.github.io/medstudy-hub/timer.html</loc></url>
+  <url><loc>https://maedoteyuel1-stack.github.io/medstudy-hub/marketing.html</loc></url>
+  <url><loc>https://maedoteyuel1-stack.github.io/medstudy-hub/money.html</loc></url>
+  <url><loc>https://maedoteyuel1-stack.github.io/medstudy-hub/start-business.html</loc></url>
+</urlset>
