@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedSt<udy Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🧠 MedStudy Hub</div>
+
+        <nav>
+            <a href="#medical">Medical</a>
+            <a href="study.html"></a>>Study</a>
+            <a href="#business.html">Business</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div>
+                <p class="small-title">LEARN • BUILD • SOLVE</p>
+                <p>Created by Maedot Sentayehu ✨</p>
+
+                <h1>
+                    Your journey to<br>
+                    <span>something bigger.</span>
+                </h1>
+
+                <p class="description">
+                    Learn about medicine, study smarter,
+                    explore technology, and turn your ideas
+                    into real projects.
+                    <p id="welcome-message">
+                </p>
+
+                <button onclick="document.getElementById('medical').scrollIntoView({ behavior: 'smooth' })">
+                    <a href="brain.html" class="hero-button">Start Learning →</a> 
+                </button>
+            </div>
+
+            <div class="brain">
+                🧠
+            </div>
+        </section>
+
+        <section class="cards">
+
+            <div class="card" id="medical">
+                <div class="icon">🧠</div>
+                <h2>Medical</h2>
+                <p>
+                    Explore anatomy, neuroscience,
+                    diseases and medical basics.
+                </p>
+                <a href="brain.html">Explore →</a>
+            </div>
+
+            <div class="card" id="study">
+                <div class="icon">📚</div>
+                <h2>Study</h2>
+                <p>
+                    Learn smarter with notes,
+                    quizzes and study tools.
+                </p>
+                <a href="study.html">Study →</a>
+            </div>
+
+            <div class="card" id="business">
+                <div class="icon">🚀</div>
+                <h2>Business</h2>
+                <p>
+                    Turn problems into ideas and
+                    learn the basics of entrepreneurship.
+                </p>
+                <a href="business.html">Build →</a>
+            </div>
+
+        </section>
+
+        <section class="mission">
+            <p class="small-title">OUR MISSION</p>
+            <h2>Learn something. Build something. Make a difference.</h2>
+            <p>
+                MedStudy Hub is built for students who want
+                to understand the world and create something useful.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Built by a future neurosurgeon & entrepreneur 🧠🚀</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("welcome-message").textContent =
+            "🚀 Choose a path below and start building your future.";
+        </script>
+
+</body>
+</html>

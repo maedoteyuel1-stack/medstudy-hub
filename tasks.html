@@ -1,0 +1,56 @@
+tasks.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks | MedStudy Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🧠 MedStudy Hub</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="study.html">Study</a>
+        </div>
+    </nav>
+</header>
+
+<section class="learning-section">
+    <p class="section-number">03</p>
+    <h1>✅ My Tasks</h1>
+    <p class="section-intro">Keep track of what you need to finish.</p>
+
+    <input type="text" id="taskInput" placeholder="Enter a task..."
+           style="padding:15px; width:70%; border-radius:10px;">
+
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="taskList"></ul>
+</section>
+
+<script>
+function addTask() {
+    let input = document.getElementById("taskInput");
+
+    if (input.value.trim() !== "") {
+        let task = document.createElement("li");
+        task.textContent = "✅ " + input.value;
+        document.getElementById("taskList").appendChild(task);
+        input.value = "";
+    }
+}
+</script>
+
+<footer>
+    <h2>🧠 MedStudy Hub</h2>
+    <p>LEARN • BUILD • SOLVE</p>
+    <p class="copyright">© 2026 MedStudy Hub</p>
+</footer>
+
+</body>
+</html>

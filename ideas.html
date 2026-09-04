@@ -1,0 +1,52 @@
+ideas.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Ideas | MedStudy Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🧠 MedStudy Hub</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="business.html">Business</a>
+        </div>
+    </nav>
+</header>
+
+<section class="learning-section">
+    <h1>💡 Business Ideas</h1>
+    <p class="section-intro">
+        Write down your ideas and turn them into real projects.
+    </p>
+
+    <textarea id="idea" rows="12"
+    style="width:100%; padding:20px; border-radius:15px;"
+    placeholder="Write your business idea here..."></textarea>
+
+<br><br>
+
+<button onclick="saveIdea()">💾 Save Idea</button>
+<p id="saved"></p>
+</section>
+
+<footer>
+    <h2>🧠 MedStudy Hub</h2>
+    <p>LEARN • BUILD • SOLVE</p>
+    <p class="copyright">© 2026 MedStudy Hub</p>
+</footer>
+<script>
+    function saveIdea() {
+        localStorage.setItem("businessIdea", document.getElementById("idea").value);
+        document.getElementById("saved").textContent = "✅ Idea saved!";
+    }
+    </script>
+
+</body>
+</html>

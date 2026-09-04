@@ -1,0 +1,88 @@
+business.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business | MedStudy Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🧠 MedStudy Hub</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="brain.html">Medical</a>
+            <a href="study.html">Study</a>
+            <a href="business.html">Business</a>
+        </div>
+    </nav>
+</header>
+
+<section class="medical-hero">
+    <div class="hero-text">
+        <p class="eyebrow">BUSINESS CENTER</p>
+        <h1>Build Something Bigger 💼</h1>
+        <p>Learn how ideas become real businesses and projects.</p>
+    </div>
+    <div class="hero-brain">💼</div>
+</section>
+
+<section class="learning-section">
+    <h2>Build Your Future 💼</h2>
+<p class="section-intro">Learn → Plan → Build → Grow.</p>
+<div class="system-card">
+    <span>🎯</span>
+    <h3>My Business Goal</h3>
+    <p>What do you want to build?</p>
+    <input type="text" id="goal" placeholder="My goal...">
+    <button onclick="saveGoal()">Save Goal</button>
+    <p id="goalSaved"></p>
+</div>
+
+    <div class="system-grid">
+
+        <div class="system-card"onclick="location.href='ideas.html'">
+            <span>💡</span>
+            <h3>Business Ideas</h3>
+            <p>Turn your ideas into opportunities.</p>
+        </div>
+
+        <div class="system-card"onclick="location.href='start-business.html'">
+            <span>🚀</span>
+            <h3>Start a Business</h3>
+            <p>Learn the basics of building a business.</p>
+        </div>
+
+        <div class="system-card"onclick="location.href='money.html'">
+            <span>💰</span>
+            <h3>Money Basics</h3>
+            <p>Understand revenue, costs and profit.</p>
+        </div>
+
+        <div class="system-card" onclick="location.href='marketing.html'">
+            <span>📈</span>
+            <h3>Marketing</h3>
+            <p>Learn how businesses attract customers.</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <h2>🧠 MedStudy Hub</h2>
+    <p>LEARN • BUILD • SOLVE</p>
+    <p class="copyright">© 2026 MedStudy Hub</p>
+</footer>
+<script>
+    function saveGoal() {
+        localStorage.setItem("businessGoal", document.getElementById("goal").value);
+        document.getElementById("goalSaved").textContent = "✅ Goal saved!";
+    }
+    </script>
+
+</body>
+</html>

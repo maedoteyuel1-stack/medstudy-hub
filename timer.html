@@ -1,0 +1,70 @@
+timer.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Timer | MedStudy Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🧠 MedStudy Hub</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="study.html">Study</a>
+        </div>
+    </nav>
+</header>
+
+<section class="learning-section" style="text-align:center;">
+    <p class="section-number">04</p>
+    <h1>⏱️ Study Timer</h1>
+
+    <h2 id="timer">25:00</h2>
+
+    <button onclick="startTimer()">Start</button>
+    <button onclick="resetTimer()">Reset</button>
+</section>
+
+<script>
+let time = 1500;
+let interval;
+
+function startTimer() {
+    clearInterval(interval);
+
+    interval = setInterval(() => {
+        if (time <= 0) {
+            clearInterval(interval);
+            return;
+        }
+
+        time--;
+
+        let minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+
+        document.getElementById("timer").textContent =
+            `${minutes}:${seconds.toString().padStart(2, "0")}`;
+    }, 1000);
+}
+
+function resetTimer() {
+    clearInterval(interval);
+    time = 1500;
+    document.getElementById("timer").textContent = "25:00";
+}
+</script>
+
+<footer>
+    <h2>🧠 MedStudy Hub</h2>
+    <p>LEARN • BUILD • SOLVE</p>
+    <p class="copyright">© 2026 MedStudy Hub</p>
+</footer>
+
+</body>
+</html>
