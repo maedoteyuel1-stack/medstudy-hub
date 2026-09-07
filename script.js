@@ -36,7 +36,7 @@ const medicalWords = [
     },
     {
         word: "Neuroglia",
-        definition: "Cells that support, protect and maintain neurons."
+        definition: "Cells that support and protect neurons."
     },
     {
         word: "Cerebellum",
@@ -47,6 +47,25 @@ const medicalWords = [
         definition: "A rapid, automatic response to a stimulus."
     }
 ];
+
+function showMedicalWord() {
+    const medicalWord = document.getElementById("medical-word");
+    const wordDefinition = document.getElementById("word-definition");
+
+    if (!medicalWord || !wordDefinition) {
+        return;
+    }
+
+    const today = new Date();
+    const day = today.getDate();
+
+    const word = medicalWords[day % medicalWords.length];
+
+    medicalWord.textContent = "🧠 " + word.word;
+    wordDefinition.textContent = word.definition;
+}
+
+showMedicalWord();
 
 
 /* IDEA GENERATOR */
