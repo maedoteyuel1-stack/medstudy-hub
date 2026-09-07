@@ -2,15 +2,21 @@ script.js
 function welcomeMessage() {
     alert("Welcome to MedStudy Hub! 🧠📚🚀");
 }
+
 function checkAnswer(button, correct) {
     const result = document.getElementById("challenge-result");
 
     if (correct) {
-        result.textContent = "🎉 Correct! The cerebellum helps control balance and coordination.";
+        result.textContent =
+            "🎉 Correct! The cerebellum helps control balance and coordination.";
     } else {
         result.textContent = "❌ Not quite! Try again.";
     }
 }
+
+
+/* MEDICAL WORD OF THE DAY */
+
 const medicalWords = [
     {
         word: "Neuron",
@@ -42,19 +48,6 @@ const medicalWords = [
     }
 ];
 
-const today = new Date();
-const start = new Date(today.getFullYear(), 0, 0);
-const dayOfYear = Math.floor((today - start) / 86400000);
-
-const word = medicalWords[dayOfYear % medicalWords.length];
-
-const medicalWord = document.getElementById("medical-word");
-const wordDefinition = document.getElementById("word-definition");
-
-if (medicalWord && wordDefinition) {
-    medicalWord.textContent = "🧠 " + word.word;
-    wordDefinition.textContent = word.definition;
-}
 
 /* IDEA GENERATOR */
 
@@ -71,9 +64,37 @@ const ideas = [
     "Design a simple app that helps students track their goals."
 ];
 
+
 function generateIdea() {
     const randomIndex = Math.floor(Math.random() * ideas.length);
+    const ideaText = document.getElementById("idea-text");
 
-    document.getElementById("idea-text").textContent =
-        "💡 " + ideas[randomIndex];
+    if (ideaText) {
+        ideaText.textContent = "💡 " + ideas[randomIndex];
+    }
 }
+
+
+/* RUN AFTER THE PAGE LOADS */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const medicalWord = document.getElementById("medical-word");
+    const wordDefinition = document.getElementById("word-definition");
+
+    if (medicalWord && wordDefinition) {
+
+        const today = new Date();
+        const start = new Date(today.getFullYear(), 0, 0);
+        const dayOfYear = Math.floor(
+            (today - start) / 86400000
+        );
+
+        const word =
+            medicalWords[dayOfYear % medicalWords.length];
+
+        medicalWord.textContent = "🧠 " + word.word;
+        wordDefinition.textContent = word.definition;
+    }
+
+});
