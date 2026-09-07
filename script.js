@@ -47,6 +47,17 @@ const medicalWords = [
         definition: "A rapid, automatic response to a stimulus."
     }
 ];
+const today = new Date();
+const dayNumber = Math.floor(today.getTime() / 86400000);
+const word = medicalWords[dayNumber % medicalWords.length];
+
+const medicalWord = document.getElementById("medical-word");
+const wordDefinition = document.getElementById("word-definition");
+
+if (medicalWord && wordDefinition) {
+    medicalWord.textContent = "🧠 " + word.word;
+    wordDefinition.textContent = word.definition;
+}
 
 
 /* IDEA GENERATOR */
