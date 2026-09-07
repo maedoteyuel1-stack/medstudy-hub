@@ -606,3 +606,59 @@ transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
     font-size: 1rem;
 }
+/* =========================================
+   MOBILE HORIZONTAL SLIDER
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .cards {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 18px;
+        padding: 20px 10px 30px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .cards .card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+        margin: 0;
+    }
+
+    /* Hide scrollbar on phones */
+    .cards::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cards {
+        scrollbar-width: none;
+    }
+
+    /* Topic cards on the Medical page */
+    .topics-grid {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 18px;
+        padding: 10px 5px 25px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .topics-grid .topic-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+    }
+
+    .topics-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .topics-grid {
+        scrollbar-width: none;
+    }
+
+}
