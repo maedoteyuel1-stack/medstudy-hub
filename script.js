@@ -50,3 +50,24 @@ const word = medicalWords[dayOfYear % medicalWords.length];
 
 document.getElementById("medical-word").textContent = "🧠 " + word.word;
 document.getElementById("word-definition").textContent = word.definition;
+/* IDEA GENERATOR */
+
+const ideas = [
+    "Create a study app for students.",
+    "Build a website that helps students organize homework.",
+    "Create a medical flashcard platform.",
+    "Design an app that teaches basic anatomy.",
+    "Create a small tutoring business.",
+    "Build a website where students share study tips.",
+    "Create a revision planner for exams.",
+    "Build a platform that connects students with useful learning resources.",
+    "Create a business that turns recycled materials into useful products.",
+    "Design a simple app that helps students track their goals."
+];
+
+function generateIdea() {
+    const randomIndex = Math.floor(Math.random() * ideas.length);
+
+    document.getElementById("idea-text").textContent =
+        "💡 " + ideas[randomIndex];
+}
