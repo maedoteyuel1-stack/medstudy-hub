@@ -47,38 +47,29 @@ const medicalWords = [
         definition: "A rapid, automatic response to a stimulus."
     }
 ];
-const today = new Date();
-const dayNumber = Math.floor(today.getTime() / 86400000);
-const word = medicalWords[dayNumber % medicalWords.length];
-
-const medicalWord = document.getElementById("medical-word");
-const wordDefinition = document.getElementById("word-definition");
-
-if (medicalWord && wordDefinition) {
-    medicalWord.textContent = "🧠 " + word.word;
-    wordDefinition.textContent = word.definition;
-}
 
 
 /* IDEA GENERATOR */
+
+const ideas = [
+    "Build a website that helps students study medicine 🧠",
+    "Create a quiz about the human brain 🔬",
+    "Build a study planner for students 📚",
+    "Create an app that teaches medical vocabulary 🩺",
+    "Start a small student business 🚀",
+    "Create a website about neuroscience 🧠",
+    "Build a flashcard tool for medical students 🎓",
+    "Create a platform where students can share study notes 💡"
+];
+
 function generateIdea() {
-    const ideas = [
-        "Build a website that helps students study medicine 🧠",
-        "Create a quiz about the human brain 🔬",
-        "Build a study planner for students 📚",
-        "Create an app that teaches medical vocabulary 🩺",
-        "Start a small student business 🚀",
-        "Create a website about neuroscience 🧠",
-        "Build a flashcard tool for medical students 🎓",
-        "Create a platform where students can share study notes 💡"
-    ];
-
     const randomIndex = Math.floor(Math.random() * ideas.length);
+    const ideaText = document.getElementById("idea-text");
 
-    document.getElementById("idea-text").textContent = ideas[randomIndex];
+    if (ideaText) {
+        ideaText.textContent = "💡 " + ideas[randomIndex];
+    }
 }
-
-  }
 
 
 /* RUN AFTER THE PAGE LOADS */
@@ -92,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const today = new Date();
         const start = new Date(today.getFullYear(), 0, 0);
+
         const dayOfYear = Math.floor(
             (today - start) / 86400000
         );
@@ -104,19 +96,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
-function generateIdea() {
-    const ideas = [
-        "Build a website that helps students study medicine 🧠",
-        "Create a quiz about the human brain 🔬",
-        "Build a study planner for students 📚",
-        "Create an app that teaches medical vocabulary 🩺",
-        "Start a small student business 🚀",
-        "Create a website about neuroscience 🧠",
-        "Build a flashcard tool for medical students 🎓",
-        "Create a platform where students can share study notes 💡"
-    ];
-
-    const randomIndex = Math.floor(Math.random() * ideas.length);
-
-    document.getElementById("idea-text").textContent = ideas[randomIndex];
-}
