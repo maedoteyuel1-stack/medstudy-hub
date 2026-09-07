@@ -574,8 +574,23 @@ transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .idea-box {
-    max-width: 650px;
-    margin: 30px auto 0;
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.idea-box p {
+    margin: 0 0 20px 0;
+}
+
+.idea-box button {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+}
 }
 
 #idea-text {
