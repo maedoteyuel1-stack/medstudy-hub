@@ -50,29 +50,24 @@ const medicalWords = [
 
 
 /* IDEA GENERATOR */
-
-const ideas = [
-    "Create a study app for students.",
-    "Build a website that helps students organize homework.",
-    "Create a medical flashcard platform.",
-    "Design an app that teaches basic anatomy.",
-    "Create a small tutoring business.",
-    "Build a website where students share study tips.",
-    "Create a revision planner for exams.",
-    "Build a platform that connects students with useful learning resources.",
-    "Create a business that turns recycled materials into useful products.",
-    "Design a simple app that helps students track their goals."
-];
-
-
 function generateIdea() {
-    const randomIndex = Math.floor(Math.random() * ideas.length);
-    const ideaText = document.getElementById("idea-text");
+    const ideas = [
+        "Build a website that helps students study medicine 🧠",
+        "Create a quiz about the human brain 🔬",
+        "Build a study planner for students 📚",
+        "Create an app that teaches medical vocabulary 🩺",
+        "Start a small student business 🚀",
+        "Create a website about neuroscience 🧠",
+        "Build a flashcard tool for medical students 🎓",
+        "Create a platform where students can share study notes 💡"
+    ];
 
-    if (ideaText) {
-        ideaText.textContent = "💡 " + ideas[randomIndex];
-    }
+    const randomIndex = Math.floor(Math.random() * ideas.length);
+
+    document.getElementById("idea-text").textContent = ideas[randomIndex];
 }
+
+  }
 
 
 /* RUN AFTER THE PAGE LOADS */
