@@ -98,3 +98,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+function generateIdea() {
+    const ideas = [
+        "Build a website that helps students study medicine 🧠",
+        "Create a quiz about the human brain 🔬",
+        "Build a study planner for students 📚",
+        "Create an app that teaches medical vocabulary 🩺",
+        "Start a small student business 🚀",
+        "Create a website about neuroscience 🧠",
+        "Build a flashcard tool for medical students 🎓",
+        "Create a platform where students can share study notes 💡"
+    ];
+
+    const randomIndex = Math.floor(Math.random() * ideas.length);
+
+    document.getElementById("idea-text").textContent = ideas[randomIndex];
+}
