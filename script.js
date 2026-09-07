@@ -57,15 +57,19 @@ function showMedicalWord() {
     }
 
     const today = new Date();
-    const day = today.getDate();
+    const start = new Date(today.getFullYear(), 0, 0);
 
-    const word = medicalWords[day % medicalWords.length];
+    const dayOfYear = Math.floor(
+        (today - start) / 86400000
+    );
+
+    const word = medicalWords[dayOfYear % medicalWords.length];
 
     medicalWord.textContent = "🧠 " + word.word;
     wordDefinition.textContent = word.definition;
 }
 
-showMedicalWord();
+document.addEventListener("DOMContentLoaded", showMedicalWord);
 
 
 /* IDEA GENERATOR */
