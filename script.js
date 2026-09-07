@@ -48,8 +48,14 @@ const dayOfYear = Math.floor((today - start) / 86400000);
 
 const word = medicalWords[dayOfYear % medicalWords.length];
 
-document.getElementById("medical-word").textContent = "🧠 " + word.word;
-document.getElementById("word-definition").textContent = word.definition;
+const medicalWord = document.getElementById("medical-word");
+const wordDefinition = document.getElementById("word-definition");
+
+if (medicalWord && wordDefinition) {
+    medicalWord.textContent = "🧠 " + word.word;
+    wordDefinition.textContent = word.definition;
+}
+
 /* IDEA GENERATOR */
 
 const ideas = [
