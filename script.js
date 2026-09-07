@@ -1,10 +1,11 @@
-script.js
 function welcomeMessage() {
     alert("Welcome to MedStudy Hub! 🧠📚🚀");
 }
 
 function checkAnswer(button, correct) {
     const result = document.getElementById("challenge-result");
+
+    if (!result) return;
 
     if (correct) {
         result.textContent =
@@ -52,15 +53,11 @@ function showMedicalWord() {
     const medicalWord = document.getElementById("medical-word");
     const wordDefinition = document.getElementById("word-definition");
 
-    if (!medicalWord || !wordDefinition) {
-        return;
-    }
-
-    const today = new Date();
-    const start = new Date(today.getFullYear(), 0, 0);
+    if (!medicalWord || !wordDefinition) return;
 
     const dayOfYear = Math.floor(
-        (today - start) / 86400000
+        (new Date() - new Date(new Date().getFullYear(), 0, 0)) /
+        86400000
     );
 
     const word = medicalWords[dayOfYear % medicalWords.length];
@@ -68,8 +65,6 @@ function showMedicalWord() {
     medicalWord.textContent = "🧠 " + word.word;
     wordDefinition.textContent = word.definition;
 }
-
-document.addEventListener("DOMContentLoaded", showMedicalWord);
 
 
 /* IDEA GENERATOR */
@@ -86,36 +81,18 @@ const ideas = [
 ];
 
 function generateIdea() {
-    const randomIndex = Math.floor(Math.random() * ideas.length);
     const ideaText = document.getElementById("idea-text");
 
-    if (ideaText) {
-        ideaText.textContent = "💡 " + ideas[randomIndex];
-    }
+    if (!ideaText) return;
+
+    const randomIndex = Math.floor(Math.random() * ideas.length);
+
+    ideaText.textContent = "💡 " + ideas[randomIndex];
 }
 
 
-/* RUN AFTER THE PAGE LOADS */
+/* START AFTER PAGE LOADS */
 
 document.addEventListener("DOMContentLoaded", function () {
-
-    const medicalWord = document.getElementById("medical-word");
-    const wordDefinition = document.getElementById("word-definition");
-
-    if (medicalWord && wordDefinition) {
-
-        const today = new Date();
-        const start = new Date(today.getFullYear(), 0, 0);
-
-        const dayOfYear = Math.floor(
-            (today - start) / 86400000
-        );
-
-        const word =
-            medicalWords[dayOfYear % medicalWords.length];
-
-        medicalWord.textContent = "🧠 " + word.word;
-        wordDefinition.textContent = word.definition;
-    }
-
+    showMedicalWord();
 });
