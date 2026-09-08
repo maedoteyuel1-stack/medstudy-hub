@@ -43,13 +43,18 @@ ideas.html
     <p class="copyright">© 2026 MedStudy Hub</p>
 </footer>
 <script>
-    function saveIdea() {
-    const idea = document.getElementById("idea").value.trim();
+  function saveIdea() {
+    const input = document.getElementById("idea");
+    const idea = input.value.trim();
 
-    if (idea !== "") {
-        localStorage.setItem("businessIdea", idea);
-        document.getElementById("saved").textContent = "✅ Idea saved!";
+    if (idea === "") {
+        return;
     }
+
+    localStorage.setItem("businessIdea", idea);
+
+    document.getElementById("saved").textContent =
+        "✅ Idea saved!";
 }
 
 </body>
