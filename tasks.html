@@ -35,16 +35,38 @@ tasks.html
 </section>
 
 <script>
+<script>
 function addTask() {
     let input = document.getElementById("taskInput");
 
     if (input.value.trim() !== "") {
-        let task = document.createElement("li");
-        task.textContent = "✅ " + input.value;
-        document.getElementById("taskList").appendChild(task);
+        let tasks = JSON.parse(localStorage.getItem("medstudyTasks")) || [];
+
+        tasks.push(input.value.trim());
+
+        localStorage.setItem("medstudyTasks", JSON.stringify(tasks));
+
         input.value = "";
+
+        showTasks();
     }
 }
+
+function showTasks() {
+    let tasks = JSON.parse(localStorage.getItem("medstudyTasks")) || [];
+    let list = document.getElementById("taskList");
+
+    list.innerHTML = "";
+
+    tasks.forEach(function(task) {
+        let li = document.createElement("li");
+        li.textContent = "✅ " + task;
+        list.appendChild(li);
+    });
+}
+
+window.addEventListener("load", showTasks);
+</script>
 </script>
 
 <footer>
