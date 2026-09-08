@@ -25,34 +25,13 @@ subjects.html
     <p class="section-number">01</p>
     <h1>📖 My Subjects</h1>
     <p class="section-intro">Choose a subject and start learning.</p>
+    <input type="text" id="subjectInput" placeholder="Add a subject...">
 
-    <div class="system-grid">
+<button onclick="addSubject()">➕ Add Subject</button>
 
-       <a href="mathematics.html" class="system-card">
-    <span>🧮</span>
-    <h3>Mathematics</h3>
-    <p>Numbers, algebra and problem solving.</p>
-</a>
-       
-        <a href="science.html" class="system-card">
-    <span>🔬</span>
-    <h3>Science</h3>
-    <p>Explore the world through science.</p>
-</a>
+<ul id="subjectList"></ul>
 
-      <a href="english.html" class="system-card">
-    <span>📚</span>
-    <h3>English</h3>
-    <p>Improve reading, writing and vocabulary.</p>
-</a>
-
-      <a href="computer-science.html" class="system-card">
-    <span>💻</span>
-    <h3>Computer Science</h3>
-    <p>Learn coding and technology.</p>
-</a>
-
-    </div>
+   
 </section>
 
 <footer>
@@ -60,6 +39,21 @@ subjects.html
     <p>LEARN • BUILD • SOLVE</p>
     <p class="copyright">© 2026 MedStudy Hub</p>
 </footer>
+    <script>
+function addSubject() {
+    const input = document.getElementById("subjectInput");
+    const subject = input.value.trim();
+
+    if (subject === "") return;
+
+    const li = document.createElement("li");
+    li.textContent = "📚 " + subject;
+
+    document.getElementById("subjectList").appendChild(li);
+
+    input.value = "";
+}
+</script>
 
 </body>
 </html>
