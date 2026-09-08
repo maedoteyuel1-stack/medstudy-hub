@@ -44,10 +44,13 @@ ideas.html
 </footer>
 <script>
     function saveIdea() {
-        localStorage.setItem("businessIdea", document.getElementById("idea").value);
+    const idea = document.getElementById("idea").value.trim();
+
+    if (idea !== "") {
+        localStorage.setItem("businessIdea", idea);
         document.getElementById("saved").textContent = "✅ Idea saved!";
     }
-    </script>
+}
 
 </body>
 </html>
