@@ -68,24 +68,34 @@
 
 <script>
 const notes = localStorage.getItem("medstudyNotes");
+const tasks = JSON.parse(localStorage.getItem("medstudyTasks")) || [];
+const idea = localStorage.getItem("businessIdea");
+const goal = localStorage.getItem("businessGoal");
 
-if (notes) {
+if (notes && notes.trim() !== "") {
     document.getElementById("notesPreview").textContent =
         notes.substring(0, 100) + "...";
 }
 
-const tasks = JSON.parse(localStorage.getItem("medstudyTasks")) || [];
-
 if (tasks.length > 0) {
     document.getElementById("tasksPreview").textContent =
         tasks.length + " saved task(s)";
-    const idea = localStorage.getItem("businessIdea");
+}
 
-if (idea) {
+if (idea && idea.trim() !== "") {
     document.getElementById("ideasPreview").textContent =
         idea.substring(0, 100) + "...";
 }
+
+if (goal && goal.trim() !== "") {
+    document.getElementById("goalsPreview").textContent =
+        goal.substring(0, 100) + "...";
+}
 </script>
+    <p id="notesPreview">No saved notes yet.</p>
+<p id="tasksPreview">No saved tasks yet.</p>
+<p id="ideasPreview">No saved ideas yet.</p>
+<p id="goalsPreview">No saved goals yet.</p>
 
 </body>
 </html>
