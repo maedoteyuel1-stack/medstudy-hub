@@ -28,6 +28,8 @@ notes.html
 
     <textarea rows="15" style="width:100%; padding:20px; border-radius:15px;"
         placeholder="Start writing your notes here..."></textarea>
+    <button onclick="saveNotes()">💾 Save Notes</button>
+    <p id="saveMessage"></p>
 </section>
 
 <footer>
@@ -35,6 +37,23 @@ notes.html
     <p>LEARN • BUILD • SOLVE</p>
     <p class="copyright">© 2026 MedStudy Hub</p>
 </footer>
+   <script>
+function saveNotes() {
+    const notes = document.querySelector("textarea").value;
 
+    localStorage.setItem("medstudyNotes", notes);
+
+    document.getElementById("saveMessage").textContent =
+        "✅ Notes saved!";
+}
+       window.addEventListener("load", function () {
+    const savedNotes = localStorage.getItem("medstudyNotes");
+
+    if (savedNotes) {
+        document.querySelector("textarea").value = savedNotes;
+    }
+});
+</script>
+ 
 </body>
 </html>
