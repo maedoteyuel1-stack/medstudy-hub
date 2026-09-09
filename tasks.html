@@ -1,6 +1,51 @@
-tasks.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks | MedStudy Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🧠 MedStudy Hub</a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="brain.html">Medical</a>
+            <a href="study.html">Study</a>
+        </div>
+    </nav>
+</header>
+
+<section class="learning-section">
+
+    <h1>✅ My Tasks</h1>
+    <p>Add tasks you want to complete.</p>
+
+    <div class="idea-box">
+
+        <input
+            type="text"
+            id="taskInput"
+            placeholder="Enter a task..."
+        >
+
+        <button onclick="addTask()">Add Task ➕</button>
+
+    </div>
+
+    <ul id="taskList"></ul>
+
+</section>
+
 <script>
+
 function addTask() {
+
     const input = document.getElementById("taskInput");
     const taskText = input.value.trim();
 
@@ -8,27 +53,46 @@ function addTask() {
         return;
     }
 
-    let tasks = JSON.parse(localStorage.getItem("medstudyTasks")) || [];
+    let tasks =
+        JSON.parse(localStorage.getItem("medstudyTasks")) || [];
 
     tasks.push(taskText);
-    localStorage.setItem("medstudyTasks", JSON.stringify(tasks));
+
+    localStorage.setItem(
+        "medstudyTasks",
+        JSON.stringify(tasks)
+    );
 
     input.value = "";
+
     showTasks();
 }
 
+
 function showTasks() {
-    const tasks = JSON.parse(localStorage.getItem("medstudyTasks")) || [];
+
+    const tasks =
+        JSON.parse(localStorage.getItem("medstudyTasks")) || [];
+
     const list = document.getElementById("taskList");
 
     list.innerHTML = "";
 
     tasks.forEach(function(task) {
+
         const li = document.createElement("li");
+
         li.textContent = "✅ " + task;
+
         list.appendChild(li);
+
     });
 }
 
+
 showTasks();
+
 </script>
+
+</body>
+</html>
