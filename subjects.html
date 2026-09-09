@@ -39,21 +39,54 @@ subjects.html
     <p>LEARN • BUILD • SOLVE</p>
     <p class="copyright">© 2026 MedStudy Hub</p>
 </footer>
-    <script>
+<script>
+
 function addSubject() {
+
     const input = document.getElementById("subjectInput");
     const subject = input.value.trim();
 
     if (subject === "") return;
 
-    const li = document.createElement("li");
-    li.textContent = "📚 " + subject;
+    let subjects =
+        JSON.parse(localStorage.getItem("medstudySubjects")) || [];
 
-    document.getElementById("subjectList").appendChild(li);
+    subjects.push(subject);
+
+    localStorage.setItem(
+        "medstudySubjects",
+        JSON.stringify(subjects)
+    );
 
     input.value = "";
-}
-</script>
 
+    showSubjects();
+}
+
+
+function showSubjects() {
+
+    const subjects =
+        JSON.parse(localStorage.getItem("medstudySubjects")) || [];
+
+    const list = document.getElementById("subjectList");
+
+    list.innerHTML = "";
+
+    subjects.forEach(function(subject) {
+
+        const li = document.createElement("li");
+
+        li.textContent = "📚 " + subject;
+
+        list.appendChild(li);
+
+    });
+}
+
+
+showSubjects();
+
+</script>
 </body>
 </html>
