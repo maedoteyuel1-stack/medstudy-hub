@@ -43,11 +43,15 @@ ideas.html
     <p class="copyright">© 2026 MedStudy Hub</p>
 </footer>
 <script>
-  function saveIdea() {
+
+function saveIdea() {
+
     const input = document.getElementById("idea");
     const idea = input.value.trim();
 
     if (idea === "") {
+        document.getElementById("saved").textContent =
+            "⚠️ Please write an idea first.";
         return;
     }
 
@@ -56,6 +60,27 @@ ideas.html
     document.getElementById("saved").textContent =
         "✅ Idea saved!";
 }
+
+
+window.addEventListener("load", function () {
+
+    const savedIdea = localStorage.getItem("businessIdea");
+
+    if (savedIdea !== null) {
+
+        document.getElementById("idea").value = savedIdea;
+
+        document.getElementById("saved").textContent =
+            "✅ Your saved idea";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
