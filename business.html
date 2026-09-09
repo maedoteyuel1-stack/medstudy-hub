@@ -79,11 +79,31 @@ business.html
     <p class="copyright">© 2026 MedStudy Hub</p>
 </footer>
 <script>
-    function saveGoal() {
-        localStorage.setItem("businessGoal", document.getElementById("goal").value);
-        document.getElementById("goalSaved").textContent = "✅ Goal saved!";
+function saveGoal() {
+    const goal = document.getElementById("goal").value.trim();
+
+    if (goal === "") {
+        document.getElementById("goalSaved").textContent =
+            "⚠️ Please enter a goal first.";
+        return;
     }
-    </script>
+
+    localStorage.setItem("businessGoal", goal);
+
+    document.getElementById("goalSaved").textContent =
+        "✅ Goal saved!";
+}
+
+window.addEventListener("load", function () {
+    const savedGoal = localStorage.getItem("businessGoal");
+
+    if (savedGoal !== null) {
+        document.getElementById("goal").value = savedGoal;
+        document.getElementById("goalSaved").textContent =
+            "✅ Your saved goal";
+    }
+});
+</script>
 
 </body>
 </html>
