@@ -1,4 +1,3 @@
-ideas.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +13,7 @@ ideas.html
 <header>
     <nav class="navbar">
         <a href="index.html" class="logo">🧠 MedStudy Hub</a>
+
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="business.html">Business</a>
@@ -22,19 +22,26 @@ ideas.html
 </header>
 
 <section class="learning-section">
+
     <h1>💡 Business Ideas</h1>
+
     <p class="section-intro">
         Write down your ideas and turn them into real projects.
     </p>
 
-    <textarea id="idea" rows="12"
-    style="width:100%; padding:20px; border-radius:15px;"
-    placeholder="Write your business idea here..."></textarea>
+    <textarea
+        id="idea"
+        rows="12"
+        style="width:100%; padding:20px; border-radius:15px;"
+        placeholder="Write your business idea here..."
+    ></textarea>
 
-<br><br>
+    <br><br>
 
-<button onclick="saveIdea()">💾 Save Idea</button>
-<p id="saved"></p>
+    <button id="saveIdeaButton">💾 Save Idea</button>
+
+    <p id="saved"></p>
+
 </section>
 
 <footer>
@@ -42,35 +49,43 @@ ideas.html
     <p>LEARN • BUILD • SOLVE</p>
     <p class="copyright">© 2026 MedStudy Hub</p>
 </footer>
+
 <script>
+
+const ideaInput = document.getElementById("idea");
+const saveButton = document.getElementById("saveIdeaButton");
+const savedMessage = document.getElementById("saved");
+
 
 function saveIdea() {
 
-    const input = document.getElementById("idea");
-    const idea = input.value.trim();
+    const idea = ideaInput.value.trim();
 
     if (idea === "") {
-        document.getElementById("saved").textContent =
+        savedMessage.textContent =
             "⚠️ Please write an idea first.";
         return;
     }
 
     localStorage.setItem("businessIdea", idea);
 
-    document.getElementById("saved").textContent =
+    savedMessage.textContent =
         "✅ Idea saved!";
 }
 
 
-window.addEventListener("load", function () {
+saveButton.addEventListener("click", saveIdea);
+
+
+window.addEventListener("DOMContentLoaded", function () {
 
     const savedIdea = localStorage.getItem("businessIdea");
 
-    if (savedIdea !== null) {
+    if (savedIdea) {
 
-        document.getElementById("idea").value = savedIdea;
+        ideaInput.value = savedIdea;
 
-        document.getElementById("saved").textContent =
+        savedMessage.textContent =
             "✅ Your saved idea";
 
     }
@@ -78,9 +93,6 @@ window.addEventListener("load", function () {
 });
 
 </script>
-
-</body>
-</html>
 
 </body>
 </html>
